@@ -3,19 +3,19 @@ applications:
   - name: movies-ms
     path: applications/movies-ms/build/libs/movies-ms-1.0-SNAPSHOT.jar
     routes:
-      - route: <initials>-movies-ms.apps.pcf.paltraining.perficient.com
+      - route: NAG-movies-ms.apps.pcf.paltraining.perficient.com
     services:
       - movies-ms-database
   - name: podcasts-ms
     path: applications/podcasts-ms/build/libs/podcasts-ms-1.0-SNAPSHOT.jar
     routes:
-      - route: <initials>-podcasts-ms.apps.pcf.paltraining.perficient.com
+      - route: NAG-podcasts-ms.apps.pcf.paltraining.perficient.com
     services:
       - podcasts-ms-database
   - name: mediabase
     path: applications/mediabase/build/libs/mediabase-1.0-SNAPSHOT.war
     routes:
-      - route: <initials>-mediabase.apps.pcf.paltraining.perficient.com
+      - route: NAG-mediabase.apps.pcf.paltraining.perficient.com
     env:
-      MOVIES_MS_URL: http://<initials>-movies-ms.apps.pcf.paltraining.perficient.com/movies
-      PODCASTS_MS_URL: http://<initials>-podcasts-ms.apps.pcf.paltraining.perficient.com/podcasts
+      MOVIES_MS_URL: http://NAG-movies-ms.apps.pcf.paltraining.perficient.com/movies
+      PODCASTS_MS_URL: http://NAG-podcasts-ms.apps.pcf.paltraining.perficient.com/podcasts
