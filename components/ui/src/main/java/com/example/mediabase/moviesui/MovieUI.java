@@ -1,19 +1,6 @@
+package com.example.mediabase.moviesui;
 
-package com.example.mediabase.movies;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.io.Serializable;
-
-@Entity
-public class Movie implements Serializable {
-
-    private static final long serialVersionUID = 1L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class MovieUI {
     private long id;
 
     private String director;
@@ -22,29 +9,14 @@ public class Movie implements Serializable {
     private String genre;
     private int rating;
 
-    public Movie() {
-    }
+    public MovieUI(){}
 
-    public Movie(String title, String director, String genre, int rating, int year) {
+    public MovieUI(String title, String director, String genre, int rating,int year) {
         this.director = director;
         this.title = title;
         this.year = year;
         this.genre = genre;
         this.rating = rating;
-    }
-
-    public Movie(String director, String title, int year) {
-        this.director = director;
-        this.title = title;
-        this.year = year;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getDirector() {
@@ -85,5 +57,13 @@ public class Movie implements Serializable {
 
     public void setRating(int rating) {
         this.rating = rating;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }
