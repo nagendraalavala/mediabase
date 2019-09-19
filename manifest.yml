@@ -6,12 +6,16 @@ applications:
       - route: NAG-movies-ms.apps.pcf.paltraining.perficient.com
     services:
       - movies-ms-database
+      - service-registry
+
   - name: podcasts-ms
     path: applications/podcasts-ms/build/libs/podcasts-ms-1.0-SNAPSHOT.jar
     routes:
       - route: NAG-podcasts-ms.apps.pcf.paltraining.perficient.com
     services:
       - podcasts-ms-database
+      - service-registry
+
   - name: mediabase
     path: applications/mediabase/build/libs/mediabase-1.0-SNAPSHOT.war
     routes:
@@ -19,3 +23,6 @@ applications:
     env:
       MOVIES_MS_URL: http://NAG-movies-ms.apps.pcf.paltraining.perficient.com/movies
       PODCASTS_MS_URL: http://NAG-podcasts-ms.apps.pcf.paltraining.perficient.com/podcasts
+    services:
+      - circuit-breaker
+      - service-registry
