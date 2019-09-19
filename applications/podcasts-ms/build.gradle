@@ -16,6 +16,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-tomcat')
     compile('mysql:mysql-connector-java:5.1.46')
     compile('commons-lang:commons-lang:2.4')
+    compile("org.springframework.cloud:spring-cloud-starter-oauth2")
+    compile("io.pivotal.spring.cloud:spring-cloud-sso-connector:$SCSSOVersion")
     compile('io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry')
     }
 

@@ -1,4 +1,3 @@
----
 applications:
   - name: movies-ms
     path: applications/movies-ms/build/libs/movies-ms-1.0-SNAPSHOT.jar
@@ -7,7 +6,9 @@ applications:
     services:
       - movies-ms-database
       - service-registry
-
+      - mediabase-sso
+    env:
+      GRANT_TYPE: client_credentials
   - name: podcasts-ms
     path: applications/podcasts-ms/build/libs/podcasts-ms-1.0-SNAPSHOT.jar
     routes:
@@ -15,14 +16,14 @@ applications:
     services:
       - podcasts-ms-database
       - service-registry
-
+      - mediabase-sso
+    env:
+      GRANT_TYPE: client_credentials
   - name: mediabase
     path: applications/mediabase/build/libs/mediabase-1.0-SNAPSHOT.war
     routes:
       - route: NAG-mediabase.apps.pcf.paltraining.perficient.com
-    env:
-      MOVIES_MS_URL: http://NAG-movies-ms.apps.pcf.paltraining.perficient.com/movies
-      PODCASTS_MS_URL: http://NAG-podcasts-ms.apps.pcf.paltraining.perficient.com/podcasts
     services:
-      - circuit-breaker
       - service-registry
+      - circuit-breaker
+      - mediabase-sso
