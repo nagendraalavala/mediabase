@@ -6,8 +6,8 @@ spring:
     suffix: .jsp
 
 logging.level:
-   root: WARN
-   com.example.mediabase.podcastsUI: DEBUG
+  root: WARN
+  com.example.mediabase.podcastsui: DEBUG
 
 hystrix:
   command:
