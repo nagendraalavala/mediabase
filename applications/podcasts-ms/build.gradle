@@ -8,6 +8,13 @@ group 'com.example'
 version '1.0-SNAPSHOT'
 description 'Podcasts Mircoservice'
 
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:$SCVersion")
+        mavenBom("io.pivotal.spring.cloud:spring-cloud-services-dependencies:$SCSClientStartersVersion")
+    }
+}
+
 dependencies {
     compile project(":components:podcasts")
 
@@ -21,9 +28,4 @@ dependencies {
     compile('io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry')
     }
 
-dependencyManagement {
-    imports {
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:$SCVersion")
-        mavenBom("io.pivotal.spring.cloud:spring-cloud-services-dependencies:$SCSClientStartersVersion")
-    }
-}
+
