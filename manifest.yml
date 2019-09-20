@@ -1,8 +1,9 @@
+---
 applications:
   - name: movies-ms
     path: applications/movies-ms/build/libs/movies-ms-1.0-SNAPSHOT.jar
     routes:
-      - route: NAG-movies-ms.apps.pcf.paltraining.perficient.com
+      - route: <initials>-movies-ms.apps.pcf.paltraining.perficient.com
     services:
       - movies-ms-database
       - service-registry
@@ -12,7 +13,7 @@ applications:
   - name: podcasts-ms
     path: applications/podcasts-ms/build/libs/podcasts-ms-1.0-SNAPSHOT.jar
     routes:
-      - route: NAG-podcasts-ms.apps.pcf.paltraining.perficient.com
+      - route: <initials>-podcasts-ms.apps.pcf.paltraining.perficient.com
     services:
       - podcasts-ms-database
       - service-registry
@@ -22,7 +23,7 @@ applications:
   - name: mediabase
     path: applications/mediabase/build/libs/mediabase-1.0-SNAPSHOT.war
     routes:
-      - route: NAG-mediabase.apps.pcf.paltraining.perficient.com
+      - route: <initials>-mediabase.apps.pcf.paltraining.perficient.com
     services:
       - service-registry
       - circuit-breaker
